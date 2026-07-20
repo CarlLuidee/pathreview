@@ -14,3 +14,6 @@ The PII scrubber fails to redact US phone numbers that use the parenthesized for
 **Setup confirmation:** [X] App runs locally at localhost:5173
 
 **Cohort ledger:** [X] Issue added to cohort ledger
+
+**Checklist Reasoning**
+I chose this issue to fix because I understand it well enough to paraphrase it in my own words, understand the app's relevant codebase, and comprehend the expected result once the app is fixed. Since this is my first open-source contribution, a Tier 1 issue was chosen because it aligns with my current skill level. There are currently nine other people working on the issue. I am confident that I can manage the scope and deliver what is required on time.
