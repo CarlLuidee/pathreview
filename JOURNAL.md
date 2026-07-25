@@ -15,5 +15,16 @@ The PII scrubber fails to redact US phone numbers that use the parenthesized for
 
 **Cohort ledger:** [X] Issue added to cohort ledger
 
-**Checklist Reasoning**
-I chose this issue to fix because I understand it well enough to paraphrase it in my own words, understand the app's relevant codebase, and comprehend the expected result once the app is fixed. Since this is my first open-source contribution, a Tier 1 issue was chosen because it aligns with my current skill level. There are currently nine other people working on the issue. I am confident that I can manage the scope and deliver what is required on time.
+## Week 8 — Reproduction & solution planning
+
+**Reproduction commit link:** https://github.com/CarlLuidee/pathreview/blob/fix/146-PII-scrubber-failing-redact/tests/unit/test_pii_scrubber.py
+
+**Reproduction summary:**
+`tests/unit/test_pii_scrubber.py` was ran using pytest to reproduce and verify the relevant bugs in the code. `test_us_phone_number_redaction`, `test_us_phone_formats`, `test_detect_phone_pii`, and `test_phone_at_start_of_text` are failing due to a pattern matching error, but additionally `test_mixed_pii_and_text` is also failing due to scrub() over-matching.
+
+**PLAN.md link:** https://github.com/CarlLuidee/pathreview/blob/fix/146-PII-scrubber-failing-redact/PLAN.md
+
+**Walkthrough video (recommended):** [link to your Loom video, ≤2 min — recommended, not graded]
+
+**Blockers or open questions:**
+[Anything you're still uncertain about going into Week 9, or leave blank]
