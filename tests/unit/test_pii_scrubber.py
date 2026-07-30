@@ -291,3 +291,18 @@ class TestPIIScrubber:
 
         # Should be minimal or no detections
         # (version number shouldn't be flagged as SSN)
+
+    def test_street_regex_does_not_match_inside_words(self, scrubber):
+        """Regression test: street_address should not match suffix abbreviations
+        embedded inside unrelated lowercase words.
+
+        Bug: the original street_address pattern used an unbounded, greedy
+        middle group that could match a suffix substring like "Pl" inside
+        "applications", corrupting nearby text and swallowing unrelated words."""
+        text = "I worked for 5 years developing Python applications."
+        scrubbed = scrubber.scrub(text)
+
+        assert scrubbed == text
+        assert "[REDACTED]" not in scrubbed
+        assert "Python" in scrubbed
+        assert "applications" in scrubbed
