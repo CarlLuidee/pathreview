@@ -15,7 +15,7 @@ class PIIScrubber:
         "phone_us": r"\b(?:\+?1[-.]?)?\(?([0-9]{3})\)?[-.]?([0-9]{3})[-.]?([0-9]{4})\b",
         "phone_intl": r"\+[0-9]{1,3}[-.]?[0-9]{1,14}",
         "ssn": r"\b(?!000|666)[0-9]{3}-(?!00)[0-9]{2}-(?!0000)[0-9]{4}\b",
-        "street_address": r"\b\d+\s+[A-Za-z\s]+(?:Street|St|Avenue|Ave|Road|Rd|Boulevard|Blvd|Drive|Dr|Lane|Ln|Court|Ct|Circle|Cir|Park|Pl|Plaza|Place|Drive|Dr|Way|Parkway|Pkwy|Point|Pt|Pike|Run|Summit|Summit|Terrace|Ter|Trail|Trl|Tunnel|Turnpike|View|Vista|Vlg|Village|Vly|Valley)",
+        "street_address": r"\b\d+\s+(?:[A-Z][a-z]*\s+){0,3}(?:Street|St\.?|Avenue|Ave\.?|Road|Rd\.?|Boulevard|Blvd\.?|Drive|Dr\.?|Lane|Ln\.?|Court|Ct\.?|Circle|Cir\.?|Plaza|Place|Pl\.?|Way|Parkway|Pkwy\.?|Point|Pt\.?|Pike|Run|Summit|Terrace|Ter\.?|Trail|Trl\.?|Turnpike|View|Vista|Village|Vlg\.?|Valley|Vly\.?)\b(?:,?\s+(?:Apt\.?|Suite|Ste\.?|Unit|#)\s?\w+)?",
     }
 
     def scrub(self, text: str) -> str:
