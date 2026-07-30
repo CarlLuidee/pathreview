@@ -15,6 +15,8 @@ The PII scrubber fails to redact US phone numbers that use the parenthesized for
 
 **Cohort ledger:** [X] Issue added to cohort ledger
 
+---
+
 ## Week 8 — Reproduction & solution planning
 
 **Reproduction commit link:** https://github.com/CarlLuidee/pathreview/blob/fix/146-PII-scrubber-failing-redact/tests/unit/test_pii_scrubber.py
@@ -24,7 +26,47 @@ The PII scrubber fails to redact US phone numbers that use the parenthesized for
 
 **PLAN.md link:** https://github.com/CarlLuidee/pathreview/blob/fix/146-PII-scrubber-failing-redact/PLAN.md
 
-**Walkthrough video (recommended):** [link to your Loom video, ≤2 min — recommended, not graded]
+**Walkthrough video (recommended):** 
+<!-- [link to your Loom video, ≤2 min — recommended, not graded] -->
 
 **Blockers or open questions:**
-[Anything you're still uncertain about going into Week 9, or leave blank]
+<!-- [Anything you're still uncertain about going into Week 9, or leave blank] -->
+
+---
+
+## Week 9 — Solution building & PR submission
+
+### Check-in 1 (mid-week)
+
+**Current progress:**
+
+Updated PII_PATTERNS in pii_scrubber.py to fix two bugs:
+1. `phone_us` failed to match phone numbers with a space after the area code parenthesis (e.g. (555) 123-4567). It has been fixed by accepting `\s` as a valid separator alongside `-/.`.
+2. `street_address` used an unbounded, case-insensitive middle group that could match suffix abbreviations (e.g. `Pl`) inside unrelated lowercase words (e.g. "applications"), corrupting nearby text. It has been fixed by bounding the address to 0–3 capitalized words and requiring a word boundary after the suffix.
+
+Prevously failing tests: `test_us_phone_number_redaction`, `test_us_phone_formats`, `test_detect_phone_pii`, `test_phone_at_start_of_text`, and `test_mixed_pii_and_text`.
+
+**Next steps:**
+- Re-run the 5 previously failing tests to confirm they now pass.
+- Run the full `test_pii_scrubber.py` suite to check for regressions elsewhere.
+
+**Blockers:**
+<!-- [Anything slowing you down? Or leave blank.] -->
+
+---
+
+### Check-in 2 (end of week)
+
+**PR link:** [link to your submitted pull request]
+
+**Branch:** [the branch name you worked on, e.g. `fix/123-short-description`]
+
+**What you built:**
+[1–3 sentences summarizing what your fix does and how it works]
+
+**Tests added or updated:**
+[Which test files did you touch? What do they cover?]
+
+**Self-review confirmation:** [ ] make check passes  [ ] make test-unit passes
+
+**Draft PR feedback received from:** [name or Slack handle, or "none"]
