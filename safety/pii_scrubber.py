@@ -12,7 +12,7 @@ class PIIScrubber:
     # Regex patterns for common PII
     PII_PATTERNS = {
         "email": r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b",
-        "phone_us": r"\b(?:\+?1[-.]?)?\(?([0-9]{3})\)?[-.]?([0-9]{3})[-.]?([0-9]{4})\b",
+        "phone_us": r"\b(?:\+?1[-.\s]?)?\(?[0-9]{3}\)?[-.\s]?[0-9]{3}[-.\s]?[0-9]{4}\b(?:\s?(?:ext\.?|x)\s?\d{1,5})?",
         "phone_intl": r"\+[0-9]{1,3}[-.]?[0-9]{1,14}",
         "ssn": r"\b(?!000|666)[0-9]{3}-(?!00)[0-9]{2}-(?!0000)[0-9]{4}\b",
         "street_address": r"\b\d+\s+(?:[A-Z][a-z]*\s+){0,3}(?:Street|St\.?|Avenue|Ave\.?|Road|Rd\.?|Boulevard|Blvd\.?|Drive|Dr\.?|Lane|Ln\.?|Court|Ct\.?|Circle|Cir\.?|Plaza|Place|Pl\.?|Way|Parkway|Pkwy\.?|Point|Pt\.?|Pike|Run|Summit|Terrace|Ter\.?|Trail|Trl\.?|Turnpike|View|Vista|Village|Vlg\.?|Valley|Vly\.?)\b(?:,?\s+(?:Apt\.?|Suite|Ste\.?|Unit|#)\s?\w+)?",
