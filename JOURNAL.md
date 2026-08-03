@@ -57,16 +57,18 @@ Prevously failing tests: `test_us_phone_number_redaction`, `test_us_phone_format
 
 ### Check-in 2 (end of week)
 
-**PR link:** [link to your submitted pull request]
+**PR link:** https://github.com/ascherj/pathreview/pull/403
 
-**Branch:** [the branch name you worked on, e.g. `fix/123-short-description`]
+**Branch:** fix/146-PII-scrubber-failing-redact
 
 **What you built:**
-[1–3 sentences summarizing what your fix does and how it works]
+<!-- [1–3 sentences summarizing what your fix does and how it works] -->
+The first fix updates the `phone_us` regex to accept whitespace and not just `-` or `.` as a separator. This update makes parenthesized phone numbers followed by a space, like (555) 123-4567, now match correctly. The second fix bounds the `street_address` regex to require capitalized words within a limited range and enforces a word boundary after suffix abbreviations, preventing substrings like "Pl" from falsely matching inside unrelated lowercase words such as "applications".
 
 **Tests added or updated:**
-[Which test files did you touch? What do they cover?]
+<!-- [Which test files did you touch? What do they cover?] -->
+- `test_pii_scrubber.py`: new regression test `test_street_regex_does_not_match_inside_words()` to test `street_address` abbreviations matching inside unrelated words
 
-**Self-review confirmation:** [ ] make check passes  [ ] make test-unit passes
+**Self-review confirmation:** [X] make check passes  [X] make test-unit passes
 
-**Draft PR feedback received from:** [name or Slack handle, or "none"]
+**Draft PR feedback received from:** none
