@@ -72,3 +72,42 @@ The first fix updates the `phone_us` regex to accept whitespace and not just `-`
 **Self-review confirmation:** [X] make check passes  [X] make test-unit passes
 
 **Draft PR feedback received from:** none
+
+---
+
+## Week 10 — Iteration & reflection
+
+### Reviewer feedback
+
+**Feedback received:** [ ] Yes  [X] No — still awaiting review
+
+**Summary of feedback:**
+<!-- [What did reviewers comment on? Or note that no review came in.] -->
+No feedback.
+
+**How you responded:**
+<!-- [What changes did you make, or what did you reply? If no feedback, leave blank.] -->
+
+---
+
+### Reflection
+
+**What was harder than you expected?**
+<!-- [Be specific — what part of the process, codebase, or workflow surprised you?] -->
+I found the initial setup process to be the one that surprised me most. Making sure I have the requirements to run the code, installing extra dependencies, troubleshooting when something goes wrong, and then familiarizing myself with the unfamiliar codebase. But overall, once I got past that hurdle, the process was smooth.
+
+**What did you learn about working in a large codebase?**
+<!-- [What's different about contributing to someone else's production code vs. building your own project?] -->
+I learned to effectively analyze and understand new and unfamiliar code using the techniques and workflows I have learned. Another is learning proper Git contribution protocols and etiquette so that my contributions meet expectations.
+
+**How did AI tools help — and where did they fall short?**
+<!-- [Where was AI assistance most useful this module? Where did you need to go beyond what AI could give you?] -->
+AI tools helped me familiarize myself with a new codebase much faster than I would have if I were to do it myself. By asking AI to describe a function or a specific part of the code, I was able to gain a much clearer idea and reduce the risk of misinterpretation.
+
+**What would you do differently if you started over?**
+<!-- [Issue selection, planning, implementation, or process — anything you'd change?] -->
+I would plan more and start working on projects much earlier so that I could have more time to polish my documentation. Also, over time, I had slightly inconsistent git commit conventions, so I would aim to rectify that and provide more consistent git commit descriptions.
+
+**What are you most proud of from this module?**
+<!-- [One thing — it doesn't have to be the PR itself.] -->
+Submitting my first ever PR contribution in a large-scale project.
